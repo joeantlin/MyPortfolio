@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap')
+
+@mixin for-phone
+    @media (max-width: 480px)
+        @content
+
+@font-face 
+    font-family: 'Maison Neue'
+    src: url("/assets/fonts/MaisonNeueExtended-Book.woff")
+
+@font-face
+    font-family: 'Oak'
+    font-weight: bold
+    src: url("/assets/fonts/oak-bold.ttf")
+
+@font-face
+    font-family: 'Oak'
+    font-weight: normal
+    src: url("/assets/fonts/oak-light.ttf")
+
+@font-face 
+    font-family: 'Plantin'
+    src: url("/assets/fonts/plantin-light.ttf")
+
+$my-white: rgba(253,253,253, 1)
+$my-black: rgba(21, 23, 23, 1)
+$back-grey: rgba(53, 53, 53, 1)
+$logo: rgba(41, 171, 226, 1)
+
+html
+    font-size: 62.5%
+    scroll-behavior: smooth;
+
+*
+    padding: 0px
+    margin: 0px
+    font-family: Helvetica, Arial, sans-serif
+
+h1
+    font-size: 5rem
+    @include for-phone
+        font-size: 4rem
+
+h2
+    font-size: 3.5rem
+    @include for-phone
+        font-size: 3rem
+
+h3
+    font-size: 2.5rem
+    @include for-phone
+        font-size: 2rem
+
+a,
+p
+    font-size: 1.5rem
+    @include for-phone
+        font-size: 1.3rem
+
+a
+    -webkit-tap-highlight-color: transparent
+
+body
+    background-color: $back-grey
+    margin: 0
+    transition: all 1s ease-out
+

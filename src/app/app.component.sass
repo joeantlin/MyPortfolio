@@ -1,0 +1,563 @@
+@mixin for-phone
+    @media (max-width: 480px)
+        @content
+
+@mixin for-tablet
+    @media (max-width: 768px)
+        @content
+
+$my-white: rgba(253,253,253, 1)
+$my-black: rgba(21, 23, 23, 1)
+$back-grey: rgba(53, 53, 53, 1)
+$logo: rgba(41, 171, 226, 1)
+
+
+// .preloader
+//     position: fixed
+//     z-index: 1000
+//     width: 100%
+//     height: 100%
+//     display: flex
+//     justify-content: center
+//     align-items: center
+//     opacity: .75
+//     background-color: rgba(83, 83, 83, 1)
+
+//     svg
+//         width: 10rem
+//         animation: spin 2.5s infinite
+//         animation-timing-function: linear
+
+//         circle
+//             fill: $logo
+
+//     &.hide
+//         animation: fade-out .2s
+//         animation-fill-mode: forwards
+
+
+.wrapper
+    display: grid
+    max-width: 1200px
+    width: 100%
+    margin: auto
+    box-sizing: border-box
+    grid-template-rows: auto
+    grid-gap: -1rem
+    grid-template-areas: "header" "main"
+
+    .header
+        grid-area: header
+        display: grid
+        width: 100%
+        height: 100vh
+        box-sizing: border-box
+        grid-template-rows: 2fr 1fr 1fr
+
+        @include for-phone
+            grid-template-rows: 3fr 1fr 2fr
+
+        .logo
+            justify-content: center
+            align-items: center
+            display: flex
+
+            @include for-phone
+
+            svg
+                width: 50%
+                display: flex
+                overflow: visible
+                opacity: 0
+                transform: translateY(10rem)
+                filter: drop-shadow(.25rem .25rem .3rem rgba(20,0,0,.2))
+                animation: logoappear 1s ease-in-out 1.75s
+                animation-fill-mode: forwards
+                transition: all .5s
+
+                @include for-phone
+                    width: 70%
+                    animation: logoappearsmall 1s ease-in-out 1.75s
+                    animation-fill-mode: forwards
+                    transform: translateY(5rem)
+
+                &:hover
+                    width: 55%
+
+                circle
+                    fill: $logo
+
+                #name
+
+                    #joe
+                        fill: #000
+
+                    #linares
+                        fill: $logo
+
+                #title
+
+                    path
+                        opacity: 0
+                        animation: titleappear 1s ease-in-out 2.75s
+                        animation-fill-mode: forwards
+
+                #balls
+                    opacity: 0
+                    transform-origin: 90% 50%
+                    animation: appear 1s ease-in-out 3.75s
+                    animation-fill-mode: forwards
+
+        .navbar
+            text-align: center
+            width: 400px
+            margin: 2rem auto
+
+            @include for-tablet
+                width: 60%
+
+            .nav
+                width: 25%
+                display: inline-block
+                box-sizing: border-box
+                transform: translateY(3rem)
+                opacity: 0
+                animation: icontext 2s ease 1.75s
+                animation-fill-mode: forwards
+
+                @include for-phone
+                    transform: translateY(0)
+                    width: 50%
+
+                a
+                    text-decoration-line: none
+
+                    &:hover
+                        svg 
+                            transform: translate(0, 1rem)
+                            @include for-tablet
+                                transform: translate(0, 0)
+
+                            .cls-1
+                                stroke: #FDFDFD
+                                @include for-tablet
+                                    stroke: $logo
+                        p
+                            opacity: 0
+                            transform: translate(0, -.6rem)
+                            @include for-tablet
+                                opacity: 1
+                                transform: translate(0, 0)
+
+                    svg
+                        max-width: 5rem
+                        max-height: 5rem
+                        filter: drop-shadow(.3rem .3rem .3rem rgba(20,0,0,0.2))
+                        transition: all .75s
+
+                        .cls-1
+                            fill: none
+                            stroke: $logo
+                            stroke-miterlimit: 20
+                            stroke-width: 20px
+                            transition: all .75s
+
+                        path
+                            stroke-dasharray: 1900
+                            animation: visible 1.75s ease, iconappear 3s ease-in-out 1.75s
+                            animation-fill-mode: forwards
+
+
+                    p
+                        color: $logo
+                        display: block
+                        margin: 1rem auto 2rem auto
+                        font-size: 1rem
+                        font-family: 'Maison Neue'
+                        text-decoration-line: none
+                        transition: all .5s ease-in-out
+
+            .nav__1
+                grid-area: nav1
+
+            .nav__2
+                grid-area: nav2
+
+            .nav__3
+                grid-area: nav3
+
+            .nav__4
+                grid-area: nav4
+
+        .projects__link
+            display: block
+            margin: auto
+            text-decoration-line: none
+            text-align: center
+            opacity: 0
+            animation: icontext 2s ease 1.5s
+            animation-fill-mode: forwards
+
+            @include for-phone
+                transform: translateY(-3rem)
+
+            &:hover
+
+                p
+                    opacity: 0
+                    transform: translate(0, .6rem)
+                    @include for-tablet
+                        opacity: 1
+                        transform: translate(0, 0)
+
+                .arrow
+                    fill: $my-white
+                    animation-duration: 0
+                    animation-play-state: paused
+                    transform: translate(0, -1rem)
+                    @include for-tablet
+                        fill: $logo
+                        animation-duration: 2s
+                        animation-play-state: inital
+                        transform: translate(0, 0)
+
+            p
+                color: $logo
+                font-size: 1rem
+                font-family: 'Maison Neue'
+                transition: all .5s ease-in-out
+
+            .arrow
+                fill: $logo
+                width: 2.5rem
+                height: 2.5rem
+                margin-top: 1.5rem
+                filter: drop-shadow(.25rem .25rem .3rem rgba(20,0,0,.1))
+                animation: hoverslow 2s linear infinite
+                transition: all .5s ease-in-out
+
+            @include for-phone
+                align-items: top
+
+    .main 
+        grid-area: main
+        display: grid
+        width: 100%
+        box-sizing: border-box
+
+        .sticky__logo
+            text-align: center
+            height: 7.5vh
+            padding: 1rem 0
+            box-sizing: border-box
+            background-color: $back-grey
+            position: sticky
+            z-index: 1000
+            top: 0
+
+        .project__holder
+            display: grid
+            grid-gap: 1rem
+            grid-template-columns: 2fr 3fr
+            grid-template-areas: "slogan projects"
+
+            @include for-tablet
+                grid-gap: 0
+                grid-template-columns: auto
+                grid-template-areas: "projects" "slogan"
+
+            .slogan
+                grid-area: slogan
+                align-items: center
+                display: flex
+                z-index: 99
+                top: 0
+                height: 100vh
+                position: sticky
+
+                @include for-tablet
+                    justify-content: center
+                    position: relative
+                    transform: translateY(-2rem)
+                    height: auto
+
+                .slogan__holder
+                    display: grid
+                    vertical-align: top
+                    text-align: center
+                    grid-template-areas: "slog" 
+
+                    .slog__grid
+                        box-sizing: border-box
+                        grid-area: slog
+
+                        .front,
+                        .full
+                            &:hover
+                                cursor: pointer
+
+                                h1
+                                    margin: 1.25rem auto
+
+                                #front,
+                                #full
+                                    color: white
+
+                            
+                            h1
+                                &:first-child
+                                    color: $my-black
+                            
+
+                        .slog__type
+                            box-sizing: border-box
+                            margin: 10rem auto
+                            @include for-tablet
+                                margin: 0
+
+                            // &:hover
+                            //     .proj
+                            //         &:after
+                            //             width: 100%
+
+                            h1
+                                color: $my-white
+                                text-align: left
+                                font-size: 6rem
+                                font-family: 'Montserrat'
+                                font-weight: 800
+                                line-height: 90%
+                                transition: all .5s ease
+                                @include for-tablet
+                                    display: none
+                            
+                                &:nth-child(2)
+                                    color: $my-black
+
+                            .proj
+                                color: $my-black
+                                position: relative
+
+                                // &:after
+                                //     background: none repeat scroll 0 0 transparent
+                                //     bottom: 0
+                                //     content: ""
+                                //     display: block
+                                //     height: 3px
+                                //     position: absolute
+                                //     background: $logo
+                                //     transition: width 0.5s ease 0s
+                                //     width: 0
+
+                            h3
+                                display: none
+
+                                @include for-tablet
+                                    color: $logo
+                                    display: block
+                                    font-weight: 500
+                                    text-align: center
+                                    position: relative
+                                    margin: 1rem auto
+                                    display: inline-block
+                                    transform: translateY(-5rem)
+                                @include for-phone
+                                    transform: translateY(0)
+
+                            #front
+                                color: $logo
+                                
+
+                            #full
+                                color: $logo
+
+
+            // .slogan
+            //     grid-area: slogan
+            //     justify-content: center
+            //     align-items: center
+            //     display: flex
+            //     z-index: 99
+            //     top: 0
+            //     height: 100vh
+            //     position: sticky
+                
+            //     @include for-tablet
+            //         position: relative
+            //         height: auto
+
+            //     .slogan__holder
+            //         display: grid
+            //         text-align: center
+            //         grid-template-areas: "slog" 
+
+            //         .slog__type
+            //             box-sizing: border-box
+            //             grid-area: slog
+                    // h1
+                    //     text-align: left
+                    //     font-size: 6rem
+                    //     font-family: 'Montserrat'
+                    //     font-weight: 800
+                    //     line-height: 90%
+                    //     color: $my-white
+
+                    //     @include for-phone
+                    //         display: none
+                    
+                    // h3
+                    //     font-weight: 500
+                    //     text-align: center
+                    //     position: relative
+                    //     margin: 2rem auto
+                    //     display: inline-block
+                                
+                    //     span
+
+                    //         &:after
+                    //             background: none repeat scroll 0 0 transparent
+                    //             bottom: 0
+                    //             content: ""
+                    //             display: block
+                    //             height: 1px
+                    //             position: absolute
+                    //             background: $logo
+                    //             transition: width 0.5s ease 0s
+                    //             width: 0
+                            
+                    //         &:hover
+                    //             cursor: pointer
+
+                    //             &:after
+                    //                 width: 100%
+                    //                 @include for-phone
+                    //                     width: 0
+
+                    //             span
+                    //                 color: $logo
+                    //                 @include for-phone
+                    //                     color: $my-black
+
+                    // .top
+                    //     color: $logo
+
+                // a
+                //     position: absolute
+                //     bottom: 22.5vh
+                //     font-size: 4rem
+                //     color: $logo
+                //     animation: hoverslow 2s linear infinite
+                //     transition: all 0.5s ease 0s
+
+                //     @include for-phone
+                //         display: none
+
+                //     &:hover
+                //         animation-play-state: paused
+                //         color: $my-white
+                //         cursor: pointer
+                        
+
+            .project__page
+                grid-area: projects
+
+            .frontend
+                box-sizing: border-box
+
+            .backend
+                box-sizing: border-box
+
+.footer
+    height: 0
+    box-sizing: border-box
+    text-align: center
+    padding-bottom: 2rem
+    transform: translateY(-4rem)
+    @include for-phone
+        height: 4rem
+        transform: translateY(0)
+
+    a
+        color: $my-black
+        text-decoration: none
+
+    i
+        margin-left: .7rem
+
+@keyframes icontext
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes iconappear
+    0%
+        stroke-dashoffset: 1900
+    100%
+        stroke-dashoffset: 0
+
+@keyframes appear
+    0%
+        transform: rotate(-180deg)
+        opacity: 0
+    100%
+        transform: rotate(0deg)
+        opacity: 1
+
+@keyframes logoappear
+    0%
+        opacity: 0
+        transform: translate(0, 20rem)
+    
+    100%
+        opacity: 1
+        transform: translate(0, 10rem)
+
+@keyframes logoappearsmall
+    0%
+        opacity: 0
+        transform: translate(0, 15rem)
+    
+    100%
+        opacity: 1
+        transform: translate(0, 5rem)
+
+
+@keyframes titleappear
+    0%
+        opacity: 0
+        transform: translate(0, -5rem)
+    100%
+        opacity: 1
+        transform: translate(-.75, -.75rem)
+
+@keyframes hoverslow
+    0% 
+        transform: translate(0, 0)
+    50%
+        transform: translate(0, -.5rem)
+    10%
+        transform: translate(0, 0)
+
+@keyframes spin
+        0%
+            transform: rotate(0deg)
+            width: 10rem
+        50%
+            width: 7rem
+        100% 
+            transform: rotate(360deg)
+            width: 10rem
+
+@keyframes fade-out
+    100%
+        opacity: 0
+        visibility: hidden
+
+@keyframes visible
+    0%
+        opacity: 0
+    99%
+        opacity: 0
+    100%
+        opacity: 1
