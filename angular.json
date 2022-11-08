@@ -30,9 +30,8 @@
               "src/styles.sass"
             ],
             "scripts": [
-                "node_modules/jquery/dist/jquery.min.js"
-            ],
-            "es5BrowserSupport": true
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
