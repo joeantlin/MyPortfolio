@@ -16,8 +16,9 @@ declare var $: any;
   ]
 })
 export class AppComponent {
-  show: boolean
-  title = 'public';
+  public show: boolean;
+  public title = 'public';
+  public currentYear: number = new Date().getFullYear();
 
 
   constructor(
