@@ -98,14 +98,6 @@ export class AppComponent {
     //   frontpage.style.color = "white";
       // setTimeout(topProject, 1500)
     }
-    // function topProject() {
-    //   document.getElementById("project__holder").scrollIntoView();
-    // }
-    // function ifOne() {
-    //   document.getElementById("project").scrollIntoView();
-    // }
-
-
   }
 
 }
