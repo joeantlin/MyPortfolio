@@ -1,4 +1,7 @@
 version: 0.2
+env:
+  variables:
+    APP_NAME: "public"
 phases:
   install:
     runtime-versions:
@@ -14,5 +17,6 @@ phases:
   post_build:
     commands:
         - echo build process finished, we should upload to S3 now
-        - cd dist/public
+        - cd dist/$APP_NAME
         - ls -la
+        - aws s3 sync . s3://www.joelinares.com --delete
