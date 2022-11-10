@@ -30,9 +30,8 @@
               "src/styles.sass"
             ],
             "scripts": [
-                "node_modules/jquery/dist/jquery.min.js"
-            ],
-            "es5BrowserSupport": true
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -45,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -138,5 +136,7 @@
       }
     }
   },
-  "defaultProject": "public"
+  "cli": {
+    "analytics": "9777d3ba-b03a-4c50-b296-32b619c80e38"
+  }
 }

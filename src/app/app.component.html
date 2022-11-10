@@ -194,7 +194,7 @@
             </div>
             <div class="nav nav__3">
                 <a target="_blank"
-                    href="https://drive.google.com/file/d/1FacBqp3hgulQDY44W0DBEr1ECrHduu7V/view?usp=sharing">
+                    href="https://drive.google.com/file/d/1y5CmNTJYoZdiefw2kwiX9-G7Ydi3Sy1x/view?usp=sharing">
                     <svg id="resume_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352.67 391.74">
                         <path id="stroke" class="cls-1"
                             d="M84.89,331.86H313M84.89,288.31H313M84.89,244.75H313m-49-63.1c-2.34-18.71-17.57-45.6-33.22-45.66H169.26c-15.64.07-30.86,27-33.21,45.66m64.1-63.43a23.64,23.64,0,0,0,16.89-7,25.43,25.43,0,0,0,0-35.36,23.86,23.86,0,0,0-34.16,0,25.43,25.43,0,0,0,0,35.36,23.64,23.64,0,0,0,16.89,7h.3Zm134.14,268c17.57,0,32-14,32-31V45.44c0-17-14.47-31-32-31H65.71c-17.57,0-32,14-32,31V355.23c0,17,14.47,31,32,31"
@@ -288,11 +288,11 @@
                 </div>
                 <!-- <a class="next" id="next">&#11167;</a> -->
             </div>
-            <div class="project__page frontend" *ngIf="show" [@fadeF]>
+            <div class="project__page frontend" *ngIf="show" [@fadeF] id="top_front">
                 <app-front></app-front>
             </div>
 
-            <div class="project__page backend" *ngIf="!show" [@fadeF]>
+            <div class="project__page backend" *ngIf="!show" [@fadeF] id="top_back">
                 <app-back></app-back>
             </div>
         </div>
@@ -300,13 +300,13 @@
     </div>
 </div>
 <div class="footer bottom">
-    <p> <a href="#">&#169; Copyright 2019 Joseph Linares |
+    <p> <a href="#">&#169; Copyright {{currentYear}} Joseph Linares |
             Created using</a>
         <i class="devicon-html5-plain" title="html5"></i>
         <i class="devicon-sass-plain" title="sass"></i>
         <i class="devicon-typescript-plain" title="typescript"></i>
         <i class="devicon-jquery-plain" title="jquery"></i>
-        <i class="devicon-angularjs-plain" title="angular"></i>
+        <i class="devicon-angularjs-plain" title="angular 12"></i>
     </p>
 
 </div>
