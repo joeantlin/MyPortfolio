@@ -94,9 +94,7 @@ export class AppComponent {
     //   setTimeout(ifOne, 1500)
     } else {
       this.show = true;
-    //   fullpage.style.color = "rgba(41, 171, 226, 1)";
-    //   frontpage.style.color = "white";
-      // setTimeout(topProject, 1500)
+  
     }
   }
 }
